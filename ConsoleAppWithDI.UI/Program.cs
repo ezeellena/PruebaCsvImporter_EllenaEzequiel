@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CsvImporter
+namespace ConsoleAppWithDI.UI
 {
     public class Program
     {

@@ -1,7 +1,7 @@
 using System;
-using CsvImporter.Entities;
+using ConsoleAppWithDI.UI.Entities;
 
-namespace CsvImporter.Services
+namespace ConsoleAppWithDI.UI.Services
 {
     public interface IDescargaCsvService
     {

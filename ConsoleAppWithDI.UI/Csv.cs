@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
-using CsvImporter.Models;
-using CsvImporter.Services;
+using ConsoleAppWithDI.UI.Models;
+using ConsoleAppWithDI.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace CsvImporter
+namespace ConsoleAppWithDI.UI
 {
     public class Csv
     {
@@ -61,9 +61,9 @@ namespace CsvImporter
             _logger.LogInformation($"Tamaño: {resultado.Tamaño} bytes");
             _logger.LogInformation($"Tiempo Descarga: {resultado.TiempoDemora.Minutes} minutos");
             _logger.LogInformation($"Descargas paralelas: {resultado.DescargasParalelas}");
-            //var ubi = @"C:\Users\ezequ\Desktop\ConsoleAppWithDI-master\ConsoleAppWithDI.UI\Stock.CSV";
+            var ubi = @"C:\Users\ezequ\Desktop\ConsoleAppWithDI-master\ConsoleAppWithDI.UI\Stock.CSV";
             _acmeCorporationContext.Database.SetCommandTimeout(1000);
-            _acmeCorporationContext.Database.ExecuteSqlRaw("BULK INSERT dbo.Stock FROM '" + resultado.UbicacionArchivo + "'" +
+            _acmeCorporationContext.Database.ExecuteSqlRaw("BULK INSERT dbo.Stock FROM '" + ubi + "'" +
                 "WITH  (MAXERRORS=10, FIRSTROW=2, FIELDTERMINATOR = ';',ROWTERMINATOR = '0x0a')");
 
             _logger.LogInformation("Descarga Finalizada");

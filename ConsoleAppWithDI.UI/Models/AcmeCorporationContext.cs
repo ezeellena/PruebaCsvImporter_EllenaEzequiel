@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace CsvImporter.Models
+namespace ConsoleAppWithDI.UI.Models
 {
     public partial class AcmeCorporationContext : DbContext
     {

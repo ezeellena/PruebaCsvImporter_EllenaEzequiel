@@ -1,6 +1,6 @@
 using System;
 
-namespace CsvImporter.Entities
+namespace ConsoleAppWithDI.UI.Entities
 {
     public class ResultadoDescarga
     {

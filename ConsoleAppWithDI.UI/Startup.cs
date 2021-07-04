@@ -1,13 +1,13 @@
 using System.IO;
-using CsvImporter.Models;
-using CsvImporter.Services;
+using ConsoleAppWithDI.UI.Models;
+using ConsoleAppWithDI.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace CsvImporter
+namespace ConsoleAppWithDI.UI
 {
     public static class Startup
     {

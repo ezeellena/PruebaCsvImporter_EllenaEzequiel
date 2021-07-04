@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleAppWithDI.UI.Models
+namespace CsvImporter.Models
 {
     public partial class Stock
     {

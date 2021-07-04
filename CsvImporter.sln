@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppWithDI.UI", "ConsoleAppWithDI.UI\ConsoleAppWithDI.UI.csproj", "{7DEC00EF-29C8-4251-9C19-B3079585D910}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsvImporter", "ConsoleAppWithDI.UI\CsvImporter.csproj", "{7DEC00EF-29C8-4251-9C19-B3079585D910}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

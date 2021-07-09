@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using ConsoleAppWithDI.UI.Entities;
+using CsvImporter.Entities;
 
-namespace ConsoleAppWithDI.UI.Services
+namespace CsvImporter.Services
 {
     public class DescargaCsvService : IDescargaCsvService
     {

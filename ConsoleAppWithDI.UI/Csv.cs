@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ConsoleAppWithDI.UI.Models;
-using ConsoleAppWithDI.UI.Services;
+using CsvImporter.Models;
+using CsvImporter.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace ConsoleAppWithDI.UI
+namespace CsvImporter
 {
     public class Csv
     {
@@ -75,7 +75,7 @@ namespace ConsoleAppWithDI.UI
             //_logger.LogInformation($"Descargas paralelas: {resultado.DescargasParalelas}");
             var ubi = @"C:\Users\ezequ\Desktop\ConsoleAppWithDI-master\ConsoleAppWithDI.UI\Stock.CSV";
             _acmeCorporationContext.Database.SetCommandTimeout(1000);
-            _acmeCorporationContext.Database.ExecuteSqlRaw("BULK INSERT dbo.Stock FROM '" + ubi + "'" +
+            _acmeCorporationContext.Database.ExecuteSqlRaw("BULK INSERT dbo.Stock FROM '" + resultado.UbicacionArchivo + "'" +
                 "WITH  (MAXERRORS=10, FIRSTROW=2, FIELDTERMINATOR = ';',ROWTERMINATOR = '0x0a')");
 
             _logger.LogInformation("Descarga Finalizada");

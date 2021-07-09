@@ -131,6 +131,9 @@ namespace ConsoleAppWithDI.UI.Services
 
         }
 
-        
+        public ResultadoDescarga Descarga()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -25,22 +25,29 @@ namespace ConsoleAppWithDI.UI
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(configuration)
                 .WriteTo.File("Logging-.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
+                //.WriteTo.MSSqlServer()
                 .CreateLogger();
 
             services.AddLogging(builder =>
             {
                 builder.AddConfiguration(configuration.GetSection("Logging"));
-                builder.AddConsole();
                 builder.AddSerilog();
+                builder.AddConsole();
             });
-
+                
             services.AddDbContext<AcmeCorporationContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("AcmeCorporation"));
             });
 
             services.AddSingleton<IDescargaCsvService, DescargaCsvService>();
+            services.AddSingleton<IDescargaCsvService, DescargarCvsServiceAmazon>();
 
+            services.AddSingleton<ISingletonService, SingletonScopedTransient>();
+            services.AddScoped<IScopedService, SingletonScopedTransient>();
+            services.AddTransient<ITransientService, SingletonScopedTransient>();
+
+            services.AddTransient<DI>();
             services.AddSingleton<Csv>();
 
             return services;

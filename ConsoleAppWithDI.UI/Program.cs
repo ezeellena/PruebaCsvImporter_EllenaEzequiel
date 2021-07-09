@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleAppWithDI.UI.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ConsoleAppWithDI.UI
@@ -12,7 +13,11 @@ namespace ConsoleAppWithDI.UI
             var services = Startup.ConfigureServices();
             var serviceProvider = services.BuildServiceProvider();
 
-            serviceProvider.GetService<Csv>().Run(args);
+            //serviceProvider.GetService<Csv>().Run();
+            //serviceProvider.GetService<DI>().Run();
+            ActivatorUtilities.CreateInstance<DI>(serviceProvider).Run();
+
+            ActivatorUtilities.CreateInstance<DI>(serviceProvider).Run();
         }
         static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
         {
